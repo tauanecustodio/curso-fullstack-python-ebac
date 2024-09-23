@@ -8,6 +8,10 @@ body > header {
     background-color: #2f3640;
     padding: 16px 0;
     color: #f5f6fa;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 header .container {
@@ -41,14 +45,16 @@ header li a {
 
 .articles article img {
     width: 100%;
+    max-height: 220px;
+    object-fit: cover;
 }
 
 .articles article {
     width: 30%;
 }
 
-section {
-    padding: 16px 0;
+.articles article:hover {
+    scale: 1.02;
 }
 
 section h2, .articles article {
@@ -78,7 +84,11 @@ section h2, .articles article {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.section h2 {
+section {
+    padding: 76px 0 24px;
+}
+
+section h2 {
     font-size: 32px;
 }
 
@@ -91,9 +101,25 @@ section h2, .articles article {
 }
 
 #economy {
-    background-color: #f8f59f;
+    background-color: #fbf8b9;
 }
 
 #economy .articles article a {
     background-color: #ff9f1a;
+}
+
+#technology {
+    background-color: rgba(0, 64, 255, 0.1);
+}
+
+#technology .articles article a {
+    background-color: #002094;
+}
+
+#entertainment {
+    background-color: #fabbbb;
+}
+
+#entertainment .articles article a {
+    background-color: #ff1a1a;
 }
