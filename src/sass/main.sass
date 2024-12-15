@@ -1,0 +1,42 @@
+$bg-color: #000
+$text-color: #fff
+    
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+body 
+    background-color: $bg-color
+    color: $text-color
+    font-family: sans-serif
+
+.container 
+    max-width: 1024px
+    padding: 2rem
+    margin: 0 auto
+
+main 
+    border-top: 2px solid $text-color
+    border-bottom: 2px solid $text-color
+
+    section
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        gap: 1rem
+
+        img 
+            width: 100%
+            aspect-ratio: 16/9
+            object-fit: cover
+
+
+@media screen and (max-width: 768px)
+    main
+        section
+            grid-template-columns: repeat(2, 1fr)
+
+@media screen and (max-width: 576px)
+    main
+        section
+            grid-template-columns: 1fr
