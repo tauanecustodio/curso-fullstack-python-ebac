@@ -32,15 +32,12 @@ function compilaSass() {
 
 function comprimeImages() {
     return gulp.src('./src/images/*')
-        .pipe(image())
+        .pipe(imagemin())
         .pipe(gulp.dest('./dist/images'))
 }
 
-exports.javascript = minifyJS;
-exports.sass = compilaSass;
-exports.images = comprimeImages;
-
-exports.watch = function() {
+exports.default = function() {
     gulp.watch('./src/sass/*.sass', { ignoreInitial: false }, gulp.series(compilaSass));
     gulp.watch('./src/scripts/*.js', { ignoreInitial: false }, gulp.series(minifyJS))
+    gulp.watch('./src/images/*.png', { ignoreInitial: false }, gulp.series(comprimeImages))
 }
