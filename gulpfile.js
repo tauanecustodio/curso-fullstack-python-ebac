@@ -32,7 +32,7 @@ function compilaSass() {
 
 function comprimeImages() {
     return gulp.src('./src/images/*')
-        .pipe(imagemin())
+        .pipe(image())
         .pipe(gulp.dest('./dist/images'))
 }
 
