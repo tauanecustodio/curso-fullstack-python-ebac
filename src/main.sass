@@ -1,8 +1,4 @@
-$primary-color: #182c61
-$secondary-color: #44bd32
-$tertiary-color: #4cd137
-$background-color: #f5f6fa
-$text-color: #fff
+@use 'variables'
     
 *
     margin: 0
@@ -11,18 +7,19 @@ $text-color: #fff
     font-family: Roboto, sans-serif
 
 body
-    background-color: $background-color
+    background-color: variables.$background-color
 
 li 
     list-style-type: none
 
 .container
     max-width: 1024px
+    padding: 1rem
     width: 100%
     margin: 0 auto
 
 header
-    background-color: $primary-color
+    background-color: variables.$primary-color
     position: sticky
     top: 0
     left: 0
@@ -31,7 +28,6 @@ header
         display: flex
         justify-content: space-between
         align-items: center
-        padding: 16px 0
 
     .menu
         display: flex
@@ -41,16 +37,16 @@ header
             margin-left: 24px
 
             a 
-                color: $text-color
+                color: variables.$text-color
                 text-decoration: none
 
 
 
 section 
-    padding: 56px 0
+    padding: 0 0 56px
 
     .products
-        margin-top: 40px
+        margin-top: 20px
         display: grid
         grid-template-columns: repeat(3, 1fr)
         gap: 4% 1% 
@@ -63,8 +59,8 @@ section
             
             .product-button
                 display: block
-                background-color: $secondary-color
-                color: $text-color
+                background-color: variables.$secondary-color
+                color: variables.$text-color
                 text-align: center
                 padding: 8px 0
                 border-radius: 8px
@@ -72,22 +68,6 @@ section
                 text-decoration: none
 
                 &:hover
-                    background-color: $tertiary-color
+                    background-color: variables.$tertiary-color
 
-@media screen and (max-width: 1023px) 
-    .container
-        max-width: 80%
-
-    section
-        .products 
-            grid-template-columns: repeat(2, 2fr)
-            column-gap: 3%
-
-
-@media screen and (max-width: 767px) 
-    section
-        .products 
-            display: block
-
-            .product-item
-                margin-bottom: 32px
+@import 'medias'
