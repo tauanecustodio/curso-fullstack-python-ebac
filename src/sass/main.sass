@@ -1,5 +1,4 @@
-$bg-color: #000
-$text-color: #fff
+@use 'variables' as vars
     
 *
     padding: 0
@@ -7,8 +6,8 @@ $text-color: #fff
     box-sizing: border-box
 
 body 
-    background-color: $bg-color
-    color: $text-color
+    background-color: vars.$bg-color
+    color: vars.$text-color
     font-family: sans-serif
 
 .container 
@@ -17,8 +16,8 @@ body
     margin: 0 auto
 
 main 
-    border-top: 2px solid $text-color
-    border-bottom: 2px solid $text-color
+    border-top: 2px solid vars.$text-color
+    border-bottom: 2px solid vars.$text-color
 
     section
         display: grid
