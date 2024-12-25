@@ -1,0 +1,99 @@
+@import "variables";
+
+.display-flex(@justify, @gap) {
+    display: flex;
+    justify-content: @justify;
+    align-items: center;
+    gap: @gap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1023px) {
+        max-width: 80%;
+    }
+}
+
+header {
+    background-color: @colors[bg-header];
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    .container {
+        .display-flex(space-between, @spacing[space-sm]);
+        padding: @spacing[space-sm] 0;
+    
+        .menu {
+            .display-flex(space-between, @spacing[space-sm]);
+        
+            li {
+                font-weight: bold;
+                list-style-type: none;
+        
+                a {
+                    color: @colors[text-header];
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+main {
+    background-color: @colors[bg-main];
+    padding: @spacing[space-lg] 0;
+
+    section {
+        .products {
+            margin-top: @spacing[space-lg];
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: @spacing[space-md] @spacing[space-sm];
+            width: 100%;
+
+            @media screen and (max-width: 1023px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            
+            @media screen and (max-width: 767px) {
+                grid-template-columns: 1fr;
+            }
+        
+            .product-item {
+                list-style-type: none;
+
+                img {
+                    width: 100%;
+                    border-radius: 16px;
+                }
+                
+                .product-button {
+                    display: block;
+                    background-color: @colors[bg-button];
+                    color: @colors[text-button];
+                    text-align: center;
+                    padding: @spacing[space-xs] 0;
+                    border-radius: 8px;
+                    margin-top: @spacing[space-xs];
+                    text-decoration: none;
+                    
+                    &:hover {
+                        background-color: @colors[bg-button-hover];
+                    }
+                }
+            }
+        }
+    }
+}
